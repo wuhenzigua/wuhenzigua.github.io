@@ -7,21 +7,20 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="相对路径 首先我们要知道 lunix 系统里面的路径用的是&#x2F; 而 windows 系统里用的是  我们存在这样两个 file A.jpg B.md A.jpg 存在于.jpg B.md 存在于.md 这样 A 相较于 B 的相对路径就是...jpg  ..是上一级路径，..\..\是上上级路径  1Tips:另外，在网站的应用中，通常我们使用&quot;&#x2F;&quot;来表示根目录，&#x2F;img&#x2F;pho">
+<meta name="description" content="为什么我们要更新算法，因为FedAvg并不鲁棒 Robustness: We would like a federated learning algorithm to be robust to corrupted updates contributed by malicious devices or hardware&#x2F;software failures. FedAvg uses an arithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="相对路径与绝对路径">
-<meta property="og:url" content="https://www.dongnanzhi.top/2024/10/20/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:title" content="Robust Aggregation for Federated Learning">
+<meta property="og:url" content="https://www.dongnanzhi.top/2024/11/16/Robust-Aggregation-for-Federated-Learning/index.html">
 <meta property="og:site_name" content="Blog by wuhencj123">
-<meta property="og:description" content="相对路径 首先我们要知道 lunix 系统里面的路径用的是&#x2F; 而 windows 系统里用的是  我们存在这样两个 file A.jpg B.md A.jpg 存在于.jpg B.md 存在于.md 这样 A 相较于 B 的相对路径就是...jpg  ..是上一级路径，..\..\是上上级路径  1Tips:另外，在网站的应用中，通常我们使用&quot;&#x2F;&quot;来表示根目录，&#x2F;img&#x2F;pho">
+<meta property="og:description" content="为什么我们要更新算法，因为FedAvg并不鲁棒 Robustness: We would like a federated learning algorithm to be robust to corrupted updates contributed by malicious devices or hardware&#x2F;software failures. FedAvg uses an arithm">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-19T18:46:59.000Z">
-<meta property="article:modified_time" content="2024-10-19T19:00:23.247Z">
+<meta property="article:published_time" content="2024-11-15T18:11:09.000Z">
+<meta property="article:modified_time" content="2024-11-17T17:15:01.714Z">
 <meta property="article:author" content="wuhencj">
-<meta property="article:tag" content="计算机基础知识">
 <meta name="twitter:card" content="summary">
 
 
-<title >相对路径与绝对路径</title>
+<title >Robust Aggregation for Federated Learning</title>
 
 <!-- Favicon -->
 
@@ -64,7 +63,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"www.dongnanzhi.top","author":"wuhencj","root":"/","typed_text":null,"theme_version":"2.2.3","theme":{"switch":true,"default":"style-dark","language":"zh-Hans"},"favicon":{"logo":"/img/favicon.svg","icon16":"favicon-16x16.png","icon32":"favicon-32x32.png","apple_touch_icon":"apple-touch-icon.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","sticky":"TOP","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"The blog has been lovely to run undefined day"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-10-20 03:00:23"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-11-18 01:15:01"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.3" id="trm-switch-style">
@@ -213,7 +212,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            相对路径与绝对路径
+                            Robust Aggregation for Federated Learning
                         </h1>
 
                         
@@ -313,13 +312,13 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            10/20
+            11/16
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            02:46
+            02:11
         </div>
     </div>
     <div class="col-sm-4">
@@ -331,23 +330,140 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h2 id="相对路径">相对路径</h2>
-<p>首先我们要知道 lunix 系统里面的路径用的是/ 而 windows
-系统里用的是<br />
-</p>
-<p>我们存在这样两个 file A.jpg B.md A.jpg 存在于.jpg B.md 存在于.md 这样
-A 相较于 B 的相对路径就是...jpg</p>
-<ul>
-<li><code>..是上一级路径，..\..\是上上级路径</code></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tips:另外，在网站的应用中，通常我们使用<span class="string">&quot;/&quot;</span>来表示根目录，/img/photo.jpg就表示photo.jpg文件在这个网站的根目录上的img目录里。但是这样使用对于初学者来说是具有风险性的，因为要知道这里所指的根目录并不是你的网站的根目录，而是你的网站所在的服务器的根目录，因此当网站的根目录与服务器根目录不同时，就会发生错误。</span><br></pre></td></tr></table></figure>
-<h2 id="绝对路径">绝对路径</h2>
-<p>从计算机根目录开始到文件的路径，如：c:/website/img/photo.jpg</p>
-<h2 id="summary">Summary</h2>
-<p>绝对路径，从根目录为起点到某一个目录的路径；
-相对路径，从一个目录为起点到另外一个的目录的路径。</p>
-<p>from <a
-target="_blank" rel="noopener" href="https://blog.csdn.net/hgd613/article/details/8041662">朔月战士的刀</a></p>
+    <p>为什么我们要更新算法，因为FedAvg并不鲁棒</p>
+<p>Robustness: We would like a federated learning algorithm to be robust
+to corrupted updates contributed by malicious devices or
+hardware/software failures. FedAvg uses an arithmetic mean to aggregate
+the device updates in (3), which is known to not be robust [34]. This
+can be made precise by the notion of a breakdown point [67], which is
+the smallest fraction of the points which need to be changed to cause
+the aggregate to take on arbitrary values. The breakdown point of the
+mean is 0, since only one point needs to changed to arbitrarily change
+the aggregate [10]. This means in federated learning that a single
+corrupted update, either due to an adversarial attack or a failure, can
+arbitrarily change the resulting aggregate in each round. We will give
+examples of adversarial corruptions in Section
+III-B.这里Breakdown的概念不太理解</p>
+<p>中位数代替均值可以使模型更稳健</p>
+<p>secura average oracle</p>
+<p>然而，事实证明，健壮性与联合学习的另外两个特性并不直接兼容，即通信效率和隐私。</p>
+<p>联邦学习通常通过安全多方计算（Secure Multi-Party Computation,
+SMPC）实现隐私保护。在此机制下，设备端的更新会被加密或添加噪声，服务器无法直接看到单个设备的贡献。</p>
+<p>现有方法，分布式优化和拜占庭鲁棒性</p>
+<p>现有的鲁棒方法（如多Krum、修剪平均）
+对异常更新的处理性能较好，但通常无法在 隐私保护的情况下有效实施。</p>
+<p>几何中位数是多维数据的一种鲁棒中心估计方法，对超过50%的点被污染仍具有强鲁棒性。</p>
+<p>Weiszfeld算法是经典的几何中位数求解算法但其在数值上不稳定，需进一步改进。</p>
+<p>作者定义了设备可能遭遇的三种污染情况： •
+数据污染：设备本地数据被篡改（如标签翻转或数据变形）。 •
+更新污染：设备返回的更新被注入噪声或恶意操控。 •
+自适应污染：恶意设备基于全局模型生成对抗性更新。</p>
+<p>迭代安全聚合（iterative secure aggregate）</p>
+<ol type="a">
+<li>Static data poisoning: The corrupted devices C are allowed to modify
+their training data prior to the start of the training, and the data is
+fixed thereafter. Formally, the objective function of device i ∈ C is
+now F ̃i(w) = Ez∼D ̃i [f (w; z)] where D ̃i has been modified from the
+original Di. These devices then participate in the local updates (2)
+with ∇F ̃i rather than ∇Fi. We consider device i to contribute corrupted
+updates only if D ̃i ∈/ D (for instance, D is the set of natural RGB
+images). b) Adaptive data poisoning: The corrupted devices C are allowed
+to modify their training data in each round of training depending on the
+current model w(t). Concretely, the objective function of device i ∈ C
+in round t is F ̃(t) i (w) = Ez∼D ̃ (t) i [f (w; z)] where D ̃ (t) i has
+been modified from the original Di using knowledge of w(t). As
+previously, these devices then participate in the local updates (2) with
+∇F ̃(t) i rather than ∇Fi in round t. c) Update Poisoning: The corrupted
+devices can send an arbitrary vector to the server for aggregation, as
+described by (4) in its full generality. This setting subsumes all
+previous examples as special cases. 三种不同的损坏</li>
+</ol>
+<p>论文阅读笔记：《Robust Aggregation for Federated Learning》</p>
+<p>I. 引言</p>
+<pre><code>•   背景：
+•   联邦学习通过分布式设备协作训练模型，保护数据隐私。
+•   当前主流方法FedAvg对异常值敏感，缺乏鲁棒性，尤其在设备更新被污染的情况下。
+•   动机：
+•   提出一种基于几何中位数的鲁棒聚合方法RFA，能在高污染场景中有效工作。
+•   贡献：
+1.  将几何中位数引入联邦学习，设计了鲁棒的聚合算法。
+2.  提供了理论分析，证明了算法的收敛性和鲁棒性。
+3.  实验表明，RFA在高污染场景下的性能远优于传统方法。</code></pre>
+<ol start="2" type="I">
+<li><p>相关工作</p>
+<p>• 联邦学习：以隐私保护为核心的分布式优化方法，FedAvg是其代表算法。 •
+鲁棒估计：几何中位数作为经典的鲁棒统计方法，能抵抗高达50%的异常值。 •
+对抗性更新：现有方法如Multi-Krum、Trimmed
+Mean关注拜占庭鲁棒性，但通信效率和隐私保护兼顾不足。 • 研究目标： •
+结合几何中位数的鲁棒性与联邦学习的隐私保护需求，设计高效的聚合方法。</p></li>
+<li><p>问题设定</p></li>
+</ol>
+<pre><code>•   联邦学习框架：
+•   在 ￼ 个设备中，每个设备 ￼ 使用本地数据分布 ￼ 训练局部模型 ￼，服务器聚合得到全局模型 ￼。
+•   FedAvg使用算术平均聚合，敏感于异常值。
+•   污染模型：
+1.  静态数据污染：设备本地数据在训练前被修改。
+2.  自适应数据污染：设备根据全局模型动态生成对抗性数据。
+3.  更新污染：设备提交伪造的更新向量。
+•   目标：</code></pre>
+<p>设计一种鲁棒的联邦学习方法，在设备更新被污染时，依然能够收敛到高质量的全局模型。</p>
+<ol start="4" type="I">
+<li>鲁棒聚合与RFA算法</li>
+</ol>
+<p>本章重点：介绍RFA方法的设计原理、核心算法及其理论鲁棒性。</p>
+<ol type="1">
+<li><p>几何中位数聚合</p>
+<p>• 定义： 几何中位数 ￼ 是最小化加权欧几里得距离和的点： ￼ •
+￼：设备更新。 • ￼：设备的权重。 • 鲁棒性： • 几何中位数具有断点
+￼，即使50%的设备被污染，仍能保证结果的稳定性。 •
+相比算术平均（断点为0），几何中位数对异常值具有显著的鲁棒性。</p></li>
+<li><p>RFA算法流程</p></li>
+</ol>
+<p>RFA用几何中位数替代FedAvg中的算术平均，步骤如下： 1. 初始化： •
+从全局模型 ￼ 开始。 • 随机选择设备集合 ￼ 参与训练。 2. 设备端更新： •
+每个设备从 ￼ 初始化模型，并使用本地数据进行多步梯度下降，更新为 ￼。 3.
+服务器端聚合： • 使用几何中位数计算新全局模型： ￼ •
+使用改进的Weiszfeld算法实现几何中位数的迭代求解，引入平滑参数 ￼
+确保计算稳定。 4. 重复迭代： •
+不断进行设备更新和聚合，直到模型收敛。</p>
+<ol start="3" type="1">
+<li><p>理论分析</p>
+<p>• 鲁棒性：在最多50%的设备被污染时，RFA仍能稳定收敛。 • 误差来源：</p>
+<ol type="1">
+<li>几何中位数的近似误差（由迭代算法引入）。</li>
+<li>数据异质性误差（设备数据分布差异）。 • 收敛性： •
+在强凸优化问题中，RFA具有线性收敛特性，最终误差由随机噪声、数据异质性和几何中位数误差决定。</li>
+</ol></li>
+</ol>
+<p>V. 实验</p>
+<pre><code>•   数据集与任务：
+1.  EMNIST（字符识别）
+2.  Shakespeare（字符级语言建模）
+3.  Sent140（情感分析）
+•   实验结果：
+•   鲁棒性：
+•   在静态数据污染、自适应数据污染和更新污染下，RFA准确率远高于FedAvg。
+•   对全知更新污染，RFA仍表现出显著的抗干扰能力。
+•   通信效率：
+•   RFA通信成本约为FedAvg的3-5倍，但在高污染场景下，额外开销是可以接受的。
+•   个性化扩展：
+•   个性化RFA在异质数据分布场景下表现更佳，准确率提升5%-10%。</code></pre>
+<ol start="6" type="I">
+<li><p>结论</p>
+<p>• 主要贡献： •
+提出一种鲁棒联邦聚合方法（RFA），结合几何中位数实现对设备更新污染的鲁棒性。
+• 理论与实验均表明，RFA在高污染场景下显著优于传统方法。 • 局限性： •
+通信成本较高。 • 对极端对抗性攻击（如拜占庭攻击）仍需额外机制支持。 •
+未来方向：</p>
+<ol type="1">
+<li>提升几何中位数计算效率。</li>
+<li>扩展至更复杂的深度学习任务。</li>
+<li>研究动态设备参与场景下的鲁棒性。</li>
+</ol></li>
+</ol>
+<p>总结</p>
+<p>这篇论文通过将几何中位数引入联邦学习，设计了一种兼具鲁棒性和隐私保护的聚合方法。RFA方法在理论和实验中均表现出优越性，是联邦学习领域的一项重要进展。</p>
+<p>如果需要补充任何细节，或深入某一部分内容，请告诉我！</p>
 
 </article>
     
@@ -365,7 +481,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/hgd613/article/detail
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/10/22/%E6%A6%82%E7%8E%87%E6%9E%81%E9%99%90%E7%90%86%E8%AE%BApre/" class="trm-cover-frame trm-anima-link">
+        <a href="/2024/11/19/%E6%8D%A2%E6%BA%90/" class="trm-cover-frame trm-anima-link">
             
             
                 <img alt="cover" class="no-fancybox" src="/img/block.jpg">
@@ -379,14 +495,14 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/hgd613/article/detail
                 </a>
             </div>
             <h5>
-                <a href="/2024/10/22/%E6%A6%82%E7%8E%87%E6%9E%81%E9%99%90%E7%90%86%E8%AE%BApre/" class="trm-anima-link">
-                    概率极限理论pre
+                <a href="/2024/11/19/%E6%8D%A2%E6%BA%90/" class="trm-anima-link">
+                    换源
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>24/10/22</li>
-                <li>16:26</li>
+                <li>24/11/19</li>
+                <li>16:35</li>
                 
                 
             </ul>
@@ -397,7 +513,7 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/hgd613/article/detail
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/10/20/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90TEST1/" class="trm-cover-frame trm-anima-link">
+        <a href="/2024/11/14/A-signal-processing-perspective/" class="trm-cover-frame trm-anima-link">
             
             
                 <img alt="cover" class="no-fancybox" src="/img/block.jpg">
@@ -411,14 +527,14 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/hgd613/article/detail
                 </a>
             </div>
             <h5>
-                <a href="/2024/10/20/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90TEST1/" class="trm-anima-link">
-                    回归分析TEST1
+                <a href="/2024/11/14/A-signal-processing-perspective/" class="trm-anima-link">
+                    A signal processing perspective
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>24/10/20</li>
-                <li>00:07</li>
+                <li>24/11/14</li>
+                <li>16:03</li>
                 
                 
             </ul>

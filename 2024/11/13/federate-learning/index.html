@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="L-smoothDefinition: A differentiable function ( f(x) ) is called smooth if and only if it has a Lipschitz continuous gradient, i.e., if and only if there exists a constant ( L &lt; \infty ) such that">
+<meta name="description" content="L-smooth Definition: A differentiable function ( f(x) ) is called smooth if and only if it has a Lipschitz continuous gradient, i.e., if and only if there exists a constant ( L &lt; ) such that [ | f(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="federate learning">
-<meta property="og:url" content="http://example.com/2024/11/13/federate-learning/index.html">
+<meta property="og:url" content="https://www.dongnanzhi.top/2024/11/13/federate-learning/index.html">
 <meta property="og:site_name" content="Blog by wuhencj123">
-<meta property="og:description" content="L-smoothDefinition: A differentiable function ( f(x) ) is called smooth if and only if it has a Lipschitz continuous gradient, i.e., if and only if there exists a constant ( L &lt; \infty ) such that">
+<meta property="og:description" content="L-smooth Definition: A differentiable function ( f(x) ) is called smooth if and only if it has a Lipschitz continuous gradient, i.e., if and only if there exists a constant ( L &lt; ) such that [ | f(">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-13T01:52:53.000Z">
-<meta property="article:modified_time" content="2024-11-14T08:01:47.683Z">
+<meta property="article:modified_time" content="2024-11-15T04:52:22.121Z">
 <meta property="article:author" content="wuhencj">
 <meta name="twitter:card" content="summary">
 
@@ -62,8 +62,8 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"wuhencj","root":"/","typed_text":null,"theme_version":"2.2.3","theme":{"switch":true,"default":"style-dark","language":"zh-Hans"},"favicon":{"logo":"/img/favicon.svg","icon16":"favicon-16x16.png","icon32":"favicon-32x32.png","apple_touch_icon":"apple-touch-icon.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","sticky":"TOP","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"The blog has been lovely to run undefined day"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-11-14 16:01:47"};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"www.dongnanzhi.top","author":"wuhencj","root":"/","typed_text":null,"theme_version":"2.2.3","theme":{"switch":true,"default":"style-dark","language":"zh-Hans"},"favicon":{"logo":"/img/favicon.svg","icon16":"favicon-16x16.png","icon32":"favicon-32x32.png","apple_touch_icon":"apple-touch-icon.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms","author":"Post author: ","copyright_link":"Post link: ","copyright_license_title":"Copyright Notice: ","copyright_license_content":"All articles in this blog are licensed under undefined unless otherwise stated.","copy_success":"Copied","copy_failure":"Copy failed","open_read_mode":"Enter reading mode","exit_read_mode":"Exit reading mode","notice_outdate_message":"It has been undefined days since the last update, the content of the article may be outdated.","sticky":"TOP","just":"Just","min":"minutes ago","hour":"hours ago","day":"days ago","month":"months ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"The blog has been lovely to run undefined day"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-11-15 12:52:22"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.3" id="trm-switch-style">
@@ -330,29 +330,71 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h2 id="L-smooth"><a href="#L-smooth" class="headerlink" title="L-smooth"></a>L-smooth</h2><p><strong>Definition:</strong> A differentiable function ( f(x) ) is called <strong>smooth</strong> if and only if it has a <strong>Lipschitz continuous gradient</strong>, i.e., if and only if there exists a constant ( L &lt; \infty ) such that</p>
-<p>[<br>| \nabla f(x) - \nabla f(z) |_2 \leq L | x - z |_2, \quad \forall x, z \in \mathbb{R}^N.<br>]</p>
-<p>L0范数表示向量中非零元素的个数。在特征选择中，通过最小化L0范数来寻找最少最优的稀疏特征项。而L1范数是L0范数的最优凸近似，它比L0范数要更容易求解。因此，优化过程将会被转换为更高维的范数（例如L1范数）问题。<br>向量的1-范数 各个元素的绝对值之和<br>向量的2-范数 意义：每个元素平方和再平方根<br>评价：L2范数是最常用的范数了，我们用的最多的度量距离欧氏距离就是一种L2范数。在回归里面，有人把加了L2范数项的回归c称为“岭回归”（Ridge Regression），有人也叫它“权值衰减(weight decay)”。它被广泛的应用在解决机器学习里面的过拟问题合。</p>
-<h2 id="差分隐私"><a href="#差分隐私" class="headerlink" title="差分隐私"></a>差分隐私</h2><p>差分隐私的定义如下：一个随机机制  \mathcal{M}: \mathcal{X} \to \mathbb{R}  满足  (\epsilon, \delta) -差分隐私，如果对于所有可以测量的集合  S \subseteq \mathcal{R}  和任意相邻的数据集  \mathcal{D}, \mathcal{D}{\prime} ，有：</p>
-<p>\Pr(\mathcal{M}(\mathcal{D}) \in S) \leq e^{\epsilon} \Pr(\mathcal{M}(\mathcal{D}{\prime}) \in S) + \delta</p>
-<h2 id="Federated-Learning-A-signal-processing-perspective"><a href="#Federated-Learning-A-signal-processing-perspective" class="headerlink" title="Federated Learning A signal processing perspective"></a>Federated Learning A signal processing perspective</h2><ol start="2">
+    <h2 id="l-smooth">L-smooth</h2>
+<p><strong>Definition:</strong> A differentiable function ( f(x) ) is
+called <strong>smooth</strong> if and only if it has a <strong>Lipschitz
+continuous gradient</strong>, i.e., if and only if there exists a
+constant ( L &lt; ) such that</p>
+<p>[ | f(x) - f(z) |_2 L | x - z |_2, x, z ^N. ]</p>
+<p>L0范数表示向量中非零元素的个数。在特征选择中，通过最小化L0范数来寻找最少最优的稀疏特征项。而L1范数是L0范数的最优凸近似，它比L0范数要更容易求解。因此，优化过程将会被转换为更高维的范数（例如L1范数）问题。
+向量的1-范数 各个元素的绝对值之和 向量的2-范数
+意义：每个元素平方和再平方根
+评价：L2范数是最常用的范数了，我们用的最多的度量距离欧氏距离就是一种L2范数。在回归里面，有人把加了L2范数项的回归c称为“岭回归”（Ridge
+Regression），有人也叫它“权值衰减(weight
+decay)”。它被广泛的应用在解决机器学习里面的过拟问题合。</p>
+<h2 id="差分隐私">差分隐私</h2>
+<p>差分隐私的定义如下：一个随机机制 : 满足 (, )
+-差分隐私，如果对于所有可以测量的集合 S 和任意相邻的数据集 , ，有：</p>
+<p>(() S) e^{} (() S) + </p>
+<h2 id="federated-learning-a-signal-processing-perspective">Federated
+Learning A signal processing perspective</h2>
+<ol start="2" type="1">
 <li><p>信号处理视角的联邦学习框架</p>
-<p> •	学习感知的资源分配和传输：论文提出了“学习感知”通信方案。与传统通信系统不同，联邦学习的目标是生成全局模型，而不是逐个恢复用户的所有信息。这个框架是使用信号处理工具优化通信效率的核心。<br> •	空中聚合（Over-the-Air Aggregation）：了解这种让多个用户同时发送更新的技术，以减少通信延迟和资源消耗，适合带宽有限的环境。该部分解释了如何通过非正交通信协议来实现用户更新的同步。</p>
-</li>
+<p>•
+学习感知的资源分配和传输：论文提出了“学习感知”通信方案。与传统通信系统不同，联邦学习的目标是生成全局模型，而不是逐个恢复用户的所有信息。这个框架是使用信号处理工具优化通信效率的核心。
+• 空中聚合（Over-the-Air
+Aggregation）：了解这种让多个用户同时发送更新的技术，以减少通信延迟和资源消耗，适合带宽有限的环境。该部分解释了如何通过非正交通信协议来实现用户更新的同步。</p></li>
 <li><p>模型更新的量化与编码</p>
-<p> •	量化和压缩：联邦学习中的模型更新量通常很大，直接传输会导致过高的通信开销。论文中讨论了如何通过量化和压缩技术减少传输数据量，同时保证全局模型的准确性。<br> •	加扰量化（Dithered Quantization）：这是对模型更新加入噪声的技术，以便在量化时减少失真。可以关注该部分如何将量化误差最小化，并且如何结合差分隐私来保护用户数据。</p>
-</li>
+<p>•
+量化和压缩：联邦学习中的模型更新量通常很大，直接传输会导致过高的通信开销。论文中讨论了如何通过量化和压缩技术减少传输数据量，同时保证全局模型的准确性。
+• 加扰量化（Dithered
+Quantization）：这是对模型更新加入噪声的技术，以便在量化时减少失真。可以关注该部分如何将量化误差最小化，并且如何结合差分隐私来保护用户数据。</p></li>
 <li><p>差分隐私与安全通信</p>
-<p> •	差分隐私机制：论文探讨了差分隐私在联邦学习中的应用，包括如何在聚合前对模型更新加噪声，以确保隐私保护。可以了解如何平衡隐私与模型准确性。<br> •	隐私与通信延迟的权衡：差分隐私在联邦学习中的引入会增加计算和通信开销，该部分探讨了如何在保证隐私的同时优化传输效率。</p>
-</li>
+<p>•
+差分隐私机制：论文探讨了差分隐私在联邦学习中的应用，包括如何在聚合前对模型更新加噪声，以确保隐私保护。可以了解如何平衡隐私与模型准确性。
+•
+隐私与通信延迟的权衡：差分隐私在联邦学习中的引入会增加计算和通信开销，该部分探讨了如何在保证隐私的同时优化传输效率。</p></li>
 <li><p>通信和带宽的优化</p>
-<p> •	资源分配和信道选择：论文详细讨论了如何在带宽受限的条件下进行资源优化，以最大化数据传输速率和模型收敛速度。重点关注信道选择、调制和编码策略，这对高效传输至关重要。<br> •	设备异质性：针对不同设备的处理能力和带宽，如何分配不同的资源。异构设备是联邦学习中的现实问题，可以了解如何通过信号处理的方法应对。</p>
-</li>
+<p>•
+资源分配和信道选择：论文详细讨论了如何在带宽受限的条件下进行资源优化，以最大化数据传输速率和模型收敛速度。重点关注信道选择、调制和编码策略，这对高效传输至关重要。
+•
+设备异质性：针对不同设备的处理能力和带宽，如何分配不同的资源。异构设备是联邦学习中的现实问题，可以了解如何通过信号处理的方法应对。</p></li>
 <li><p>实验部分</p>
-<p> •	性能评估：关注论文中不同方法在模型准确性、通信开销和隐私保护方面的性能表现。实验部分通常提供了一些实际的性能对比，帮助理解不同方法的优缺点。<br> •	不同数据分布的实验结果：论文可能会提供 i.i.d. 和非 i.i.d. 数据分布下的实验结果，了解这些结果有助于理解联邦学习在不同数据条件下的表现。</p>
-</li>
+<p>•
+性能评估：关注论文中不同方法在模型准确性、通信开销和隐私保护方面的性能表现。实验部分通常提供了一些实际的性能对比，帮助理解不同方法的优缺点。
+• 不同数据分布的实验结果：论文可能会提供 i.i.d. 和非 i.i.d.
+数据分布下的实验结果，了解这些结果有助于理解联邦学习在不同数据条件下的表现。</p></li>
 </ol>
-<h2 id="rubust-learning-and-geometric-median"><a href="#rubust-learning-and-geometric-median" class="headerlink" title="rubust learning and geometric median"></a>rubust learning and geometric median</h2><p>Distributed robust learning is concerned with samples containing a mixture of authentic samples and outliers held by a central server. The authentic samples are generated according to an underlying model (i.e., the ground truth), and the outliers may be arbitrarily corrupted or even maliciously chosen. Such robust aggregation methods are typically nonaffine and designed not to be affected by the values of the extreme (and possibly unreliable) samples. A common way to reduce the effect of the malicious outliers on the learned model is to use the geometric median in the aggregation procedure instead of the simple averaging. The geometric median is a generalization of the median in one dimension to multiple dimensions. It aggregates a collection of independent estimates into a single approximation with significantly stronger concentration properties even in the presence of a constant fraction of outliers in the collection.</p>
+<h2 id="rubust-learning-and-geometric-median">rubust learning and
+geometric median</h2>
+<p>Distributed robust learning is concerned with samples containing a
+mixture of authentic samples and outliers held by a central server. The
+authentic samples are generated according to an underlying model (i.e.,
+the ground truth), and the outliers may be arbitrarily corrupted or even
+maliciously chosen. Such robust aggregation methods are typically
+nonaffine and designed not to be affected by the values of the extreme
+(and possibly unreliable) samples. A common way to reduce the effect of
+the malicious outliers on the learned model is to use the geometric
+median in the aggregation procedure instead of the simple averaging. The
+geometric median is a generalization of the median in one dimension to
+multiple dimensions. It aggregates a collection of independent estimates
+into a single approximation with significantly stronger concentration
+properties even in the presence of a constant fraction of outliers in
+the collection.</p>
+<h3 id="idea">idea</h3>
+<p>能不能在在device
+seclect的过程中提升，因为通讯效率是取决于device的延迟，我们将不同延迟的device分开研究</p>
+<p>或者我们把延迟低的device进行更多的迭代，使得他和延迟较高的device时间相同，</p>
 
 </article>
     
