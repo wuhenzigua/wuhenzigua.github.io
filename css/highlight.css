@@ -1,0 +1,36 @@
+.highlight .comment,
+.highlight .quote { color: #8294a8; font-style: italic; }
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .addition { color: #78b7ff; }
+.highlight .number,
+.highlight .string,
+.highlight .meta .meta-string,
+.highlight .literal,
+.highlight .doctag,
+.highlight .regexp { color: #f1c987; }
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class { color: #9ad6b6; }
+.highlight .attribute,
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .title,
+.highlight .type { color: #d4a8ff; }
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .meta .keyword,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .link { color: #ff9e9e; }
+.highlight .built_in,
+.highlight .deletion { color: #ff8298; }
+.highlight .formula { background: rgba(255,255,255,.05); }
+.highlight .emphasis { font-style: italic; }
+.highlight .strong { font-weight: bold; }
+
