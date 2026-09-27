@@ -303,6 +303,7 @@ html[data-theme="dark"] .moon-icon { display: block; }
 .site-footer { border-top: 1px solid var(--line); }
 .footer-shell { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--ink-faint); font: 11px var(--mono); }
 .footer-links { display: flex; gap: 18px; }
+.footer-links .contact-link { color: var(--ink-faint); }
 .not-found { min-height: calc(100vh - 168px); display: grid; place-content: center; justify-items: start; }
 .not-found h1 { margin: 7px 0; font-size: clamp(38px, 6vw, 62px); }
 .not-found > p:not(.eyebrow) { margin: 0 0 24px; color: var(--ink-soft); font-family: var(--serif); }
@@ -468,6 +469,7 @@ body::before { display: none; }
 }
 .profile-links a:hover { border-color: var(--blue); color: var(--blue); }
 .profile-links span { margin-left: 5px; }
+.profile-links .contact-link { padding-bottom: 4px; color: var(--ink-soft); font: 500 12px var(--mono); letter-spacing: .03em; }
 
 .profile-summary {
   padding: 4px 0 0 30px;
