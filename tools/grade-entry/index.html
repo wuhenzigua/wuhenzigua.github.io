@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>助教神器 · 东南枝</title>
+    <meta
+      name="description"
+      content="输入学号尾号，默认 A，回车保存。浏览器本地处理 Excel 成绩登记表。"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b4cdb'/%3E%3Cpath d='m8 17 5 5 11-12' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="mark">✓</span>助教神器 <span class="tag">课堂工作台</span>
+      </div>
+      <div class="actions">
+        <a class="button" href="/">返回博客</a>
+        <label class="button" for="file">导入 Excel</label
+        ><input id="file" type="file" accept=".xlsx" hidden /><button
+          id="export"
+          class="primary"
+          disabled
+        >
+          导出成绩表 ↗
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">GRADE ENTRY</p>
+          <h1>把注意力留给批改。</h1>
+          <p id="fileName" class="muted">导入登记表，开始本次录入。</p>
+        </div>
+        <div class="local">◎ 文件仅在本机浏览器处理</div>
+      </div>
+      <div id="notice" role="status" aria-live="polite">
+        支持你提供的登记表格式，保留原有排版与历史成绩。
+      </div>
+      <section class="toolbar">
+        <label
+          >登记日期
+          <input
+            id="date"
+            type="text"
+            inputmode="numeric"
+            placeholder="例如 927"
+            value="927"
+            maxlength="5"
+            list="dates" /><datalist id="dates"></datalist></label
+        ><span id="dateHint">按月日填写，例如 927 表示 9 月 27 日</span
+        ><span id="saved">尚未导入</span>
+      </section>
+      <div class="workspace">
+        <section class="entry panel">
+          <div class="section-head">
+            <h2>快速录入</h2>
+            <span class="step">01 / 查找学生</span>
+          </div>
+          <label class="search-label" for="search">学号尾号 / 姓名</label
+          ><input
+            id="search"
+            autocomplete="off"
+            placeholder="输入学号尾号…"
+            disabled
+          />
+          <div id="matches" role="listbox" aria-label="匹配学生"></div>
+          <div id="student" class="student empty">
+            <div class="empty-symbol">⌨</div>
+            <h3>下一份作业，准备好了</h3>
+            <p>输入尾号，唯一匹配后直接回车登记 A</p>
+          </div>
+          <div class="grade-row">
+            <span>本次成绩</span>
+            <div id="grades">
+              <button data-grade="A" class="selected">A</button
+              ><button data-grade="B">B</button><button data-grade="C">C</button
+              ><button data-grade="缺交">缺交</button
+              ><button data-grade="请假">请假</button>
+            </div>
+          </div>
+          <button id="save" class="primary save" disabled>
+            保存，录入下一人 <kbd>↵</kbd>
+          </button>
+          <p class="keyboard">默认 A · 按 B / C 修改 · Enter 保存 · Esc 清空</p>
+          <div class="last">
+            <span id="last">保存后的记录会显示在这里</span
+            ><button id="undo" disabled>撤销上一条</button>
+          </div>
+        </section>
+        <aside class="panel overview">
+          <div class="section-head">
+            <h2>本次进度</h2>
+            <span id="dateLabel">9 月 27 日</span>
+          </div>
+          <div class="big">
+            <strong id="done">0</strong
+            ><span>/ <span id="total">0</span> 人</span>
+          </div>
+          <div class="progress"><div id="bar"></div></div>
+          <div class="stats">
+            <div><b id="countA">0</b><span>A</span></div>
+            <div><b id="countB">0</b><span>B</span></div>
+            <div><b id="remaining">0</b><span>未录入</span></div>
+          </div>
+          <div class="aside-note">
+            <h3>一份作业，一次回车</h3>
+            <p>
+              尾号唯一：输入后直接回车。<br />尾号重复：上下键选择，回车确认；再回车保存。
+            </p>
+            <p>已有成绩会保留原值，修改后才覆盖。</p>
+          </div>
+        </aside>
+      </div>
+      <section class="panel roster">
+        <div class="section-head">
+          <h2>学生名单 <span id="rosterCount"></span></h2>
+          <label class="check"
+            ><input id="onlyMissing" type="checkbox" /> 只看未录入</label
+          >
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>班级</th>
+                <th>本次成绩</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="rows">
+              <tr>
+                <td colspan="5" class="placeholder">
+                  导入 Excel 后，学生名单会出现在这里
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer>本机自动保存 · 更换浏览器或设备前，请导出 Excel 备份。</footer>
+    </main>
+    <script src="jszip.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
