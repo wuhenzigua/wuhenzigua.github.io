@@ -1,0 +1,53 @@
+name: Deploy blog to VPS
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: blog-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Package public website
+        run: python3 deploy/package.py "$RUNNER_TEMP/blog.tar.gz"
+      - name: Deploy using restricted SSH key
+        env:
+          BLOG_DEPLOY_KEY: ${{ secrets.BLOG_DEPLOY_KEY }}
+          BLOG_KNOWN_HOSTS: ${{ secrets.BLOG_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -d -m 700 "$RUNNER_TEMP/blog-ssh"
+          trap 'rm -rf "$RUNNER_TEMP/blog-ssh"' EXIT
+          printf '%s\n' "$BLOG_DEPLOY_KEY" > "$RUNNER_TEMP/blog-ssh/key"
+          printf '%s\n' "$BLOG_KNOWN_HOSTS" > "$RUNNER_TEMP/blog-ssh/known_hosts"
+          chmod 600 "$RUNNER_TEMP/blog-ssh/"*
+          ssh -T -i "$RUNNER_TEMP/blog-ssh/key" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$RUNNER_TEMP/blog-ssh/known_hosts" \
+            -o ConnectTimeout=20 -o ServerAliveInterval=15 \
+            blog-deploy@104.223.50.104 "deploy $GITHUB_SHA" < "$RUNNER_TEMP/blog.tar.gz"
+      - name: Verify public deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            version=$(curl -fsS --max-time 20 "https://www.dongnanzhi.top/deployment-version.txt?commit=$GITHUB_SHA") || version=''
+            if [ "$version" = "$GITHUB_SHA" ]; then
+              curl -fsS --max-time 20 https://www.dongnanzhi.top/ -o /dev/null
+              echo "Production verified: $GITHUB_SHA"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'Public deployment verification failed' >&2
+          exit 1
